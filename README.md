@@ -27,4 +27,3 @@ The scores are sorted in descending order, with the highest score at the top.
 Customization
 You can easily customize the quiz questions and answers by modifying the JavaScript code in script.js.
 To add more questions, create new objects with questions, choices, and correct answers in the questionBank array.
-
