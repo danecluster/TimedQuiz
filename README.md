@@ -27,8 +27,4 @@ The scores are sorted in descending order, with the highest score at the top.
 Customization
 You can easily customize the quiz questions and answers by modifying the JavaScript code in script.js.
 To add more questions, create new objects with questions, choices, and correct answers in the questionBank array.
-javascript
 
-const questionBank = [ { question: 'What is JavaScript?', choices: ['A programming language', 'A type of coffee', 'A browser', 'A car manufacturer'], correctAnswer: 'A programming language', }, // Add more questions here ]; 
-License
-This project is licensed under the MIT License - see the LICENSE file for details
