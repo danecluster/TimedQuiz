@@ -176,51 +176,38 @@ function processResults() {
   var incorrect = 0;
   
   
-  for (var i=0; i < questionBank.length; i++) {
-    if (questionBank[i].correct === questionBank[i].selected) {
+  questionBank.forEach((question) => {
+    if (question.correct === question.selected) {
       correct++;
       status = "Correct!";
     } else {
       incorrect++;
       status = "Incorrect!";
     }
-    
-    if (questionBank[i].selected !== null) {
-      //get selected text
-      var selectedText = "NA";
-      for (var j=0; j < questionBank[i].answers.length; j++) {
-        if (questionBank[i].answers[j].ansID === questionBank[i].selected) {
-          selectedText = questionBank[i].answers[j].answer;
-          break;
-        }
-      }
-    } else {
-      selectedText = "--";
-    }         
-    //get correct ans text
-    var correctText = "NA";
-    for (var k=0; k < questionBank[i].answers.length; k++) {
-      if (questionBank[i].answers[k].ansID === questionBank[i].correct) {
-        correctText = questionBank[i].answers[k].answer;
-        break;
-      }
-    }
-    
-    $("#result-rows").append("<tr><td>" + questionBank[i].question + "</td><td>" + selectedText + "</td><td>" + correctText + "</td><td>" + status + "</td></tr>");
+  
+    // Get selected text
+    const selectedText =
+      question.selected !== null
+        ? question.answers.find((answer) => answer.ansID === question.selected)?.answer || "NA"
+        : "--";
+  
+    // Get correct ans text
+    const correctText =
+      question.answers.find((answer) => answer.ansID === question.correct)?.answer || "NA";
+  
+    $("#result-rows").append(
+      `<tr><td>${question.question}</td><td>${selectedText}</td><td>${correctText}</td><td>${status}</td></tr>`
+    );
+  });  
+}
+function saveHighScore(){  
+  const initials=  $(`input[name="inputBox"]`).val().trim()
+  let allScores = JSON.parse(localStorage.getItem("highScore")) || []
+  const newScore={
+    initials:initials,
+    score:score
   }
-  
-  
-}
-function saveHighScore(){
-  console.log("click")
-var initials=  $("#initials").val.trim()
-var newScore={
-  initials:initials,
-  score:score
-}
-localStorage.setItem(newScore)
-}
-$("#initialsButton").on("click",function(){
-  console.log("click")
-  saveHighScore()
-})
+  allScores.push(newScore)
+  localStorage.setItem("highScore" , JSON.stringify(allScores))
+  $('#initialsForm').empty()
+  }
