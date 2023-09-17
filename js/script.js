@@ -126,7 +126,7 @@ $(document).ready(function () {
   $("#results-display").hide();
   $("#previousQ").hide();
   $("#nextQ").hide();
-  $("#finish").hide();
+  $("#finish").hide();  
 });
 
 function updateClock() {
@@ -149,11 +149,8 @@ $("#start").on("click", function () {
 });
 
 $(document).on("click", ".answer", processAnswer);
-
 $("#previousQ").on("click", getPreviousQuestion);
-
 $("#nextQ").on("click", getNextQuestion);
-
 $("#finish").on("click", endGame);
 
 function endGame() {
@@ -200,29 +197,23 @@ function processResults() {
     );
   });  
 }
+
 function saveHighScore(){  
-  const initials=  $(`input[name="inputBox"]`).val().trim()
-  let allScores = JSON.parse(localStorage.getItem("highScore")) || []
-  const newScore={
-    initials:initials,
-    score:score
-  }
-  allScores.push(newScore)
-  localStorage.setItem("highScore" , JSON.stringify(allScores))
-  $('#initialsForm').empty()
-  }
-
-  let scores = '';
-  scoresList.forEach((score) => {
-    console.log("this")
-     scores += `<div class="scoreShit"><p>Score: ${score.initials} ${score.score}</p></div>`
-     $(".ScoreBoard").html(scores)
-     $(".ScoreBoard").removeClass("hidden");
-  })
-////////////////////////////////
-
-the whole function looks like this
-///////////////////////////////
+const initials=  $(`input[name="inputBox"]`).val().trim()
+let allScores = JSON.parse(localStorage.getItem("highScore")) || []
+const newScore={
+  initials:initials,
+  score:score
+}
+allScores.push(newScore)
+localStorage.setItem("highScore" , JSON.stringify(allScores))
+$('#initialsForm').empty()
+}
+$("#initialsButton").on("click",function(event){
+  event.preventDefault()
+  console.log("click")
+  saveHighScore()
+})
 $("#High-Scores-Button").on("click", function(event){
   console.log("click")
   event.preventDefault()
