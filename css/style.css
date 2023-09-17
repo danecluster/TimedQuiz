@@ -40,3 +40,21 @@ display: block !important;
 .top-buffer {
   margin-top: 20px;
 }
+
+.ScoreBoard{
+  background-color: #acc4d6; background-image: -webkit-gradient(linear, left top, left bottom, from(#acc4d6), to(#434f55));
+ background-image: -webkit-linear-gradient(top, #acc4d6, #434f55);
+ background-image: -moz-linear-gradient(top, #acc4d6, #434f55);
+ background-image: -ms-linear-gradient(top, #acc4d6, #434f55);
+ background-image: -o-linear-gradient(top, #acc4d6, #434f55);
+ background-image: linear-gradient(to bottom, #acc4d6, #434f55);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#acc4d6, endColorstr=#434f55);
+ border-radius: 5px;
+ box-shadow: 4px 4px 8px rgba(113,0,0,0.6);
+ padding: 1rem;
+ margin: 1rem;
+}
+
+
+.hidden{
+  display: none;
+}
