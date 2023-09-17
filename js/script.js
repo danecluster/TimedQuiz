@@ -211,3 +211,27 @@ function saveHighScore(){
   localStorage.setItem("highScore" , JSON.stringify(allScores))
   $('#initialsForm').empty()
   }
+
+  let scores = '';
+  scoresList.forEach((score) => {
+    console.log("this")
+     scores += `<div class="scoreShit"><p>Score: ${score.initials} ${score.score}</p></div>`
+     $(".ScoreBoard").html(scores)
+     $(".ScoreBoard").removeClass("hidden");
+  })
+////////////////////////////////
+
+the whole function looks like this
+///////////////////////////////
+$("#High-Scores-Button").on("click", function(event){
+  console.log("click")
+  event.preventDefault()
+  let scoresList = JSON.parse(localStorage.getItem("highScore")) || []
+  let scores = '';
+  scoresList.forEach((score) => {
+    console.log("this")
+     scores += `<div class="scoreShit"><p>Score: ${score.initials} ${score.score}</p></div>`
+     $(".ScoreBoard").html(scores)
+     $(".ScoreBoard").removeClass("hidden");
+  })
+})
