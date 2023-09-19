@@ -27,3 +27,7 @@ The scores are sorted in descending order, with the highest score at the top.
 Customization
 You can easily customize the quiz questions and answers by modifying the JavaScript code in script.js.
 To add more questions, create new objects with questions, choices, and correct answers in the questionBank array.
+
+##screenshots
+![module 4 challenge screen shot 1](https://github.com/danecluster/TimedQuiz/assets/142095220/0f4fd399-8265-4308-ab21-7d7de4365cc6)
+![module 4 challenge screen shot 2](https://github.com/danecluster/TimedQuiz/assets/142095220/3fcaea44-1e28-452d-8e20-8c2738c72257)
