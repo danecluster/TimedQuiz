@@ -74,7 +74,7 @@ function populateQuestionDetails() {
   
   renderQuesControls();
 }
-
+//Rendered question control
 function renderQuesControls() {
   if (quesIndex === 0) {
     $("#previousQ").hide();
